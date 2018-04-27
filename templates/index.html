@@ -1,0 +1,98 @@
+<html>
+<body>
+<nav>
+  <a href="/flask/">HTML</a> |
+  <a href="/scrapy/">CSS</a> |
+  <a href="/ttttt/">JavaScript</a> |
+  <a href="/jquery/">jQuery</a><br>
+    <script>
+document.write("<h1>This is a heading</h1>");
+document.write("<p>This is a paragraph.</p>");
+</script>
+    <button type="button" onclick="alert('Welcome!')">点击这里</button>
+    <script>
+function myFunction()
+{
+x=document.getElementById("demo");  // 找到元素
+x.innerHTML="Hello JavaScript!";    // 改变内容
+}
+</script>
+    <p id="demo">
+JavaScript 能改变 HTML 元素的内容。
+</p>
+
+
+<button type="button" onclick="myFunction()">点击这里2</button>
+    <script>
+        function OnClick() {
+            alert('startWorld')
+
+        }
+    </script>
+
+    <button name="hello" onclick="OnClick()">world</button>
+    <form method="post" action="/mockservice"  method = "post">
+      ...
+
+    <div class="form-group">
+        <label>data <font style="color:#a94442" size="2">
+        <input class="form-control" id="data" name="data">
+    </div>
+    <div class="form-group">
+        <button id="start" type="submit" class="btn btn-default">Submit &nbsp</button>
+    </div>
+</form>
+</nav>
+<p>
+    <script>
+function changeImage()
+{
+element=document.getElementById('myimage')
+if (element.src.match("bulbon"))
+  {
+  element.src="/i/eg_bulboff.gif";
+  }
+else
+  {
+  element.src="/i/eg_bulbon.gif";
+  }
+}
+</script>
+
+<img id="myimage" onclick="changeImage()" src="eg_bulbon.gif">
+
+<p>点击灯泡来点亮或熄灭这盏灯</p>
+</p>
+<p>
+    <h1>我的第一段 JavaScript</h1>
+
+<p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
+
+<input id="demo" type="text">
+
+<script>
+    window.status = "put your message here"
+function myFunction()
+{
+var x=document.getElementById("demo").value;
+if(x==""||isNaN(x))
+	{
+	alert("Not Numeric");
+	}
+}
+</script>
+
+
+<script>
+
+
+
+</script>
+
+
+
+
+<button type="button" onclick="myFunction()">点击这里</button>
+</p>
+</body>
+</html>

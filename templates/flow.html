@@ -1,0 +1,11 @@
+<ul>{% if user %}
+    Hello, {{user}}
+{% else %}
+    Hello, stranger
+{% endif %}
+</ul>
+<ul>
+    {% for comment in comments%}
+        <li>{{comment}}</li>
+    {% endfor %}
+</ul>

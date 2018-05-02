@@ -10,7 +10,7 @@ from flask import abort
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/ttttt')
 def hello_world():
     user_agent=request.headers.get('User-Agent')
     print user_agent
@@ -25,7 +25,7 @@ def hello_world():
     return redirect('http://www.baidu.com')
 
 
-@app.route('/index')
+@app.route('/')
 def test():
     return render_template('index.html')
 
@@ -80,7 +80,9 @@ def makelogin():
     name=request.args.get('name')
     passwd=request.args.get('passwd')
 
-
+@app.route('/friend/<friends>')
+def get_friend(friends):
+    return render_template('friend.html',friend=friends)
 
 
 

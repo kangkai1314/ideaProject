@@ -84,6 +84,19 @@ def makelogin():
 def get_friend(friends):
     return render_template('friend.html',friend=friends)
 
+@app.route('/friend/')
+def home_friend():
+    return render_template('friend.html')
+
+@app.route('/match/')
+def match():
+    return render_template('match.html')
+
+@app.route('/help/')
+def help():
+    return render_template('help.html')
+
+
 
 
 

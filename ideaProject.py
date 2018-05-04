@@ -27,7 +27,7 @@ def hello_world():
 
 @app.route('/')
 def test():
-    return render_template('index.html')
+    return render_template('base.html')
 
 @app.route('/test/<username>/<int:number>/')
 def show_user(username,number):

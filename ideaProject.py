@@ -2,7 +2,7 @@ from flask import Flask,url_for
 from flask import request
 from flask import render_template,redirect,flash
 from form import LoginForm
-from config import *
+import config
 from flask import make_response
 from model.User import User
 from form import *
@@ -27,7 +27,7 @@ def hello_world():
 
 @app.route('/')
 def test():
-    return render_template('base.html')
+    return render_template('index.html')
 
 @app.route('/test/<username>/<int:number>/')
 def show_user(username,number):
@@ -49,18 +49,14 @@ def flow(user):
 
 @app.route('/test/login',methods=['GET','POST'])
 def login():
-    form=LoginForm(request.form)
-    if request.method == 'POST':
-        if form.validate_on_submit():
-            user = User.query.filter_by(name=request.form['username']).first()
-            if user is not None (user.password, request.form['password']):
-                pass
-                flash('You were logged in. Go Crazy.')
-                return redirect(url_for('home.home'))
+    form=LoginForm()
+    if form.validate_on_submit():
+        flash(form.username.data+'|'+form.passwd.data)
+        return redirect(url_for('success'))
 
-            else:
-                error = 'Invalid username or password.'
-    return render_template('login.html', form=form, error=error)
+    else:
+        return render_template('login.html',form=form)
+
 
 @app.route('/test/page')
 def show_page():
@@ -104,6 +100,7 @@ if __name__ == '__main__':
     app.debug=True #debug mode
     with app.test_request_context():
         print url_for('test')
-    app.config.from_object('config')
+    app.config.from_object(config)
+    app.config['SECRET_KEY'] = 'hard to guess string'
     app.run()
 
